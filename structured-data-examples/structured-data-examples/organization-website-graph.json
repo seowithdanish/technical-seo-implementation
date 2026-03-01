@@ -1,0 +1,27 @@
+{
+  "_note": "Multi-entity JSON-LD graph example connecting Organization and WebSite entities.",
+  "_purpose": "Demonstrates entity linking via @id references for improved brand consistency.",
+
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://example.com/#organization",
+      "name": "Brand Name",
+      "url": "https://example.com/",
+      "sameAs": [
+        "https://linkedin.com/company/example",
+        "https://twitter.com/example"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://example.com/#website",
+      "url": "https://example.com/",
+      "name": "Brand Name",
+      "publisher": {
+        "@id": "https://example.com/#organization"
+      }
+    }
+  ]
+}
